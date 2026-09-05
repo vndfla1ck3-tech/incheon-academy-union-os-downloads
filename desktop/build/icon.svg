@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b69e6"/><stop offset=".48" stop-color="#0b3f9d"/><stop offset="1" stop-color="#071b46"/></linearGradient>
+    <linearGradient id="wave" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#baf3ff"/><stop offset=".45" stop-color="#39bff8"/><stop offset="1" stop-color="#0878ed"/></linearGradient>
+    <linearGradient id="wave2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0c6cf0"/><stop offset="1" stop-color="#88e8ff"/></linearGradient>
+  </defs>
+  <rect x="32" y="32" width="960" height="960" rx="220" fill="url(#bg)"/>
+  <path d="M332 228h176v353c0 48-38 86-86 86h-90V228Z" fill="#f7fbff"/>
+  <path d="M182 608c70-171 210-255 377-223 92 17 167 66 224 132-91-50-182-55-272-15-91 40-146 112-197 175-40 50-90 69-132 50-38-17-52-62-38-119 8-30 21-59 38-86Z" fill="url(#wave)"/>
+  <path d="M196 672c126 79 263 67 391 17 101-39 203-31 290 61-88-39-167-33-246 4-127 59-267 83-390 29-30-13-55-32-75-57 8-19 18-37 30-54Z" fill="url(#wave2)"/>
+  <g fill="none" stroke="#b7e7ff" stroke-linecap="round"><path d="M633 612h282" stroke-width="9"/><path d="M701 612V497M850 612V520" stroke-width="12"/><path d="M704 508 642 602M704 508 756 602M704 508 805 602M850 530 787 602M850 530 907 602" stroke-width="5"/></g>
+  <g fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round"><path d="M712 330c26-24 54-24 80 0 26-24 54-24 80 0"/><path d="M822 390c20-19 41-19 61 0 20-19 41-19 61 0"/></g>
+</svg>
