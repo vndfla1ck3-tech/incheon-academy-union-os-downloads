@@ -1,0 +1,51 @@
+{
+  "name": "incheon-academy-union-os-desktop-release",
+  "version": "1.0.0",
+  "private": true,
+  "description": "인천광역시학원연합회 운영 OS 공개 배포용 데스크톱 셸",
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win nsis --x64 -c.electronVersion=44.2.0",
+    "dist:win:legacy": "electron-builder --win portable --x64 -c.electronVersion=22.3.27",
+    "dist:mac": "electron-builder --mac dmg zip --universal -c.electronVersion=44.2.0 -c.mac.minimumSystemVersion=13.0",
+    "dist:mac:mojave": "electron-builder --mac dmg zip --x64 -c.electronVersion=26.6.10 -c.mac.minimumSystemVersion=10.14.6"
+  },
+  "devDependencies": {
+    "electron": "44.2.0",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "kr.or.incheonacademy.unionos",
+    "productName": "인천학원연합회 OS",
+    "asar": true,
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.cjs",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.business",
+      "icon": "build/icon.svg",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "minimumSystemVersion": "13.0"
+    },
+    "win": {
+      "icon": "build/icon.svg",
+      "target": ["nsis"]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "인천학원연합회 OS",
+      "artifactName": "Incheon-Academy-OS-Setup-${version}-${arch}.${ext}"
+    },
+    "publish": null
+  }
+}
