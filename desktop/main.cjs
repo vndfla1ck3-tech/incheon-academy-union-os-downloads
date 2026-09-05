@@ -8,6 +8,7 @@ const APP_ORIGIN=new URL(APP_URL).origin;
 const UPDATE_MANIFEST=`${APP_ORIGIN}/app-release.json`;
 const DOWNLOAD_PAGE=`${APP_ORIGIN}/download`;
 const PRODUCT_ID='kr.or.incheonacademy.unionos';
+const DISPLAY_NAME='실용음악분과 OS';
 
 app.setAppUserModelId(PRODUCT_ID);
 
@@ -93,7 +94,7 @@ function installMenu(win){
 
 function createWindow(){
   const win=new BrowserWindow({
-    title:'인천학원연합회 OS',
+    title:DISPLAY_NAME,
     width:1440,
     height:940,
     minWidth:980,
