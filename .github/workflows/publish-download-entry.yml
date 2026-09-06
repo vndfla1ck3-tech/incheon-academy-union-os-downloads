@@ -24,12 +24,12 @@ jobs:
       - name: Validate portable HTML entry file
         run: |
           set -euo pipefail
-          file='00_실용음악분과_OS_공식다운로드센터.html'
-          test -f "$file"
-          grep -q 'https://incheon-academy-union-os-web.vercel.app/download' "$file"
-          grep -q 'app-icon.svg' "$file"
-          grep -q '실용음악분과(임시) OS' "$file"
-          grep -q '인천광역시학원연합회' "$file"
+          source='00_실용음악분과_OS_공식다운로드센터.html'
+          test -f "$source"
+          grep -q 'https://incheon-academy-union-os-web.vercel.app/download' "$source"
+          grep -q 'app-icon.svg' "$source"
+          grep -q '실용음악분과(임시) OS' "$source"
+          grep -q '인천광역시학원연합회' "$source"
 
   publish:
     name: Publish entry file to v1.0.1 Release
@@ -43,6 +43,9 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          file='00_실용음악분과_OS_공식다운로드센터.html'
-          gh release upload v1.0.1 "$file" --clobber
-          gh release view v1.0.1 --json assets --jq '.assets[].name' | grep -Fx "$file"
+          source='00_실용음악분과_OS_공식다운로드센터.html'
+          target='00_Practical-Music-OS_Download-Center.html'
+          cp "$source" "$target"
+          gh release upload v1.0.1 "$target" --clobber
+          gh release delete-asset v1.0.1 '00_._OS_.html' -y || true
+          gh release view v1.0.1 --json assets --jq '.assets[].name' | grep -Fx "$target"
